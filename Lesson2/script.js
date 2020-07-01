@@ -1,6 +1,10 @@
 var a;
+var A;
 var b = 10;
 a = 100;
+A = 99;
+a = 20;
 alert(a);
+alert(A);
 var text = "Your Name Here";
-alert (text);
+alert(text);
