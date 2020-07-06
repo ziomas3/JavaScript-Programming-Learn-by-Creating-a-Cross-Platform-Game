@@ -5,16 +5,16 @@
     <style>
         canvas {
             border: 1px solid black;
-            width:100%;
+            width: 100%;
         }
     </style>
 </head>
 
 <body>
-    <h1>ForEach</h1>
+    <h1>Bouncing Enemies</h1>
     <canvas id="myCanvas" width="640" height="360"></canvas>
     <script>
-        
+
         var GAME_WIDTH = 640;
         var GAME_HEIGHT = 360;
 
@@ -53,18 +53,27 @@
         var ctx = canvas.getContext("2d");
 
         var update = function () {
-            
-            enemies.forEach(function(element, index){
-               element.y+= element.speedY;
+
+            enemies.forEach(function (element, index) {
+                element.y += element.speedY;
+                if (element.y <= 0) {
+                    element.y = 0;
+                    element.speedY *= -1;
+                }
+                else if (element.y >= GAME_HEIGHT - element.w) {
+                    element.y = GAME_HEIGHT - element.w;
+                    element.speedY *= -1;
+                }
+
             });
-                
-            
+
+
         }
 
         var draw = function () {
             ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
             ctx.fillStyle = '#3333FF';
-            enemies.forEach(function(element, index){
+            enemies.forEach(function (element, index) {
                 ctx.fillRect(element.x, element.y, element.w, element.h)
             });
         }
