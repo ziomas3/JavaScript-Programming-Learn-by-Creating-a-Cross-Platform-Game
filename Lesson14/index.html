@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    Function Expression
+    <script>
+        var fly = function () {
+            console.log('you are flying');
+        }
+        fly();
+
+        player = {
+            x: 10,
+            y: 20,
+            energy: 100,
+            superpower: function () {
+                console.log('no superpower');
+            }
+        };
+
+        player.x = 100;
+
+        player.superpower = fly;
+        player.superpower();
+    </script>
+</body>
+
+</html>
