@@ -28,8 +28,8 @@
         var ctx = canvas.getContext("2d");
 
         var update = function () {
-            if (x == 500-w) boink = 0;
-            if (x == 0) boink = 1;
+            if (x > 500-w) boink = 0;
+            if (x < 0) boink = 1;
             if (boink)
                 x = x + speed;
             else
